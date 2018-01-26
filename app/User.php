@@ -72,6 +72,17 @@ class User extends Authenticatable
     }
 
     /**
+     * Alias for hasRole, naming like can() function to check for a role
+     *
+     * @param type $role
+     * @return bool
+     */
+    public function role(string $role): bool
+    {
+        return $this->hasRole($role);
+    }
+
+    /**
      * Checks if the user has the given permission
      *
      * @param  Permission | string  $permission
